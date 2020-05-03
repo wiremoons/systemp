@@ -21,7 +21,7 @@ requires "nim >= 1.2.0"
 # builds a 'release' optmised version
 task release, "Builds a release version":
   echo("\nRelease Build...\n")
-  exec("nimble build -d:release")
+  exec("nimble build -d:release --passC:-march=native")
 
 # builds a 'debug' version
 task debug, "Builds a debug version":
