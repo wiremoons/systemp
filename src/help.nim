@@ -36,15 +36,16 @@ proc showHelp*() =
   ## Returns: outputs help information to the display then quits the program
   ## Description: display command line help information requested by the user
   ##
+  let appName = extractFilename(getAppFilename())
   echo fmt"""
 Purpose
 ¯¯¯¯¯¯¯
- Use the '{paramStr(0)}' application to display the current CPU
+ Use the '{appName}' application to display the current CPU
  temperature on the Linux computer is run on.
 
 Usage
 ¯¯¯¯¯
-Run '{paramStr(0)}' with:
+Run '{appName}' with:
 
     Flag                 Description                       Default Value
     ¯¯¯¯                 ¯¯¯¯¯¯¯¯¯¯¯                       ¯¯¯¯¯¯¯¯¯¯¯¯¯

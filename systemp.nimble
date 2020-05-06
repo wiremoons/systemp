@@ -8,13 +8,8 @@ srcDir        = "src"
 bin           = @["systemp"]
 binDir        = "bin"
 
-
-
 # Dependencies
-
 requires "nim >= 1.2.0"
-
-
 
 # Tasks
 
