@@ -11,7 +11,7 @@ The program currently only work on Linux based systems as it uses the `/proc` fi
 
 The program was written to check up on the current temperature of a couple of Raspberry Pi 4B computers. 
 
-I already had a similar tool written in C called [rpi-temp](https://github.com/wiremoons/rpi-temp). This however only works with the Raspbian version of Linux, so did not work when running the my Raspberry Pi on Ubuntu 64bit ARM Linux instead. So I re-created a tool that worked with any Debian based Linux, such as Debain, Ubuntu, and Raspian. It also works with other non Raspbery Pi computer too. 
+I already had a similar tool written in C called [rpi-temp](https://github.com/wiremoons/rpi-temp). This however only works with the Raspbian version of Linux, so did not work when running the my Raspberry Pi on Ubuntu 64bit ARM Linux instead. So I re-created a tool that worked with any Debian based Linux, such as Debian, Ubuntu, and Raspbian. It also works with other non Raspberry Pi computer too. 
 
 When run, the command outputs the following:
 ```
@@ -60,7 +60,7 @@ Run 'systemp' with:
     -v | --version       display program version           false
 ```
 
-As indicated by the above help screen output, the version information for the program can alos be checked with the command: `systemp -v` or `systemp --version`:
+As indicated by the above help screen output, the version information for the program can also be checked with the command: `systemp -v` or `systemp --version`:
 
 ```
 'systemp' is version: '1.0.0' running on 'linux' (amd64).
