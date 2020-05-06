@@ -34,6 +34,14 @@ import dbgUtils, version, help
 
 debug "application runing..."
 
+# check to make sure the app is being run on Linux
+debug "checking the program is running on Linux OS"
+when not defined(linux):
+  debug "program NOT running on Linux OS - aborting"
+  echo "ERROR: This program requires the Linux OS to run"
+  quit -2
+debug "Linux OS detected... continuing run"
+
 let args = commandLineParams()
 
 # check if the user wanted any command line options
