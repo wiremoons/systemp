@@ -1,8 +1,8 @@
 # Package
 
-version       = "1.0.0"
+version       = "1.0.1"
 author        = "Simon Rowe"
-description   = "Utility to display a Linux computer CPU temperature."
+description   = "Utility to display a Linux computers CPU temperature."
 license       = "MIT"
 srcDir        = "src"
 bin           = @["systemp"]
