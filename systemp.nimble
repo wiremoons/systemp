@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.2"
+version       = "1.0.3"
 author        = "Simon Rowe"
 description   = "Utility to display a Linux computers CPU temperature."
 license       = "MIT"
