@@ -96,7 +96,7 @@ All is well.
 
 ## Building 'systemp'
 
-Nim support many operating systems and hardware platforms, but this particular 
+Nim supports many operating systems and hardware platforms, but this particular 
 program will only work on a Linux based system as it uses the `/proc` file 
 system to obtain the current CPU temperature.
 
