@@ -1,0 +1,80 @@
+# This basic workflow is an Actions to build the 'systemp' program with Nim.
+
+name: systemp
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    #runs-on: ubuntu-latest <- still Ubuntu 18.04
+    runs-on: ubuntu-20.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:      
+    # Install Ubuntu OS updates
+    - name: Install OS updates, security fixes etc
+      run: |
+        #echo "Installing OS updates, security fixes etc"
+        sudo apt update
+        sudo apt -y upgrade
+        sudo apt -y autoremove
+    
+    # Install dependancies and Nim language
+    - name: Install any dependencies and Nim language
+      run: |
+        echo "Installing Nim language and dependencies..."
+        sudo apt -y install build-essential openssl git curl
+        # installs Ubuntu package currently Version: 1.0.6-1
+        sudo apt -y install nim
+        # install specific version to obtain latest
+        #curl https://raw.githubusercontent.com/wiremoons/nim-misc/master/nim-install.sh -o nim-install.sh
+        #chmod 755 ./nim-install.sh
+        #./nim-install.sh
+        echo "Installed version of Nim and Nimble are:"
+        nim --version
+        nimble --version
+        #$HOME/.nimble/nim/bin/nim --version
+        #$HOME/.nimble/bin/nimble --version
+
+    # Install latest Nimble version
+    #- name: Install dependencies and Nim language
+    #  run: |
+      #  echo "Update nimble to current version..."
+        #nimble refresh -y
+        #nimble install -y nimble
+        #nimble version
+        
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+        
+    # Runs a set of commands using the runners shell - include env secret key
+    - name: Run a multi-line script
+      #env:
+          #DSAPI: ${{ secrets.DSAPI }}
+      run: |
+        echo "Building the project..."
+        pwd
+        ls
+        #PATH="${PATH}":$HOME/.nimble/nim/bin:$HOME/.nimble/bin
+        #$HOME/.nimble/bin/nimble release
+        nimble release
+        cd bin/
+        ./systemp -v
+        ./systemp
+        echo "DONE."
+
+    # Saves built file as a relase.
+    #- name: Upload artifact
+    #  uses: actions/upload-artifact@master
+    #  with:
+    #    name: release
+    #    path: bin

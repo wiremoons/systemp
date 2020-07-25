@@ -1,3 +1,5 @@
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE) ![systemp](https://github.com/wiremoons/systemp/workflows/systemp/badge.svg?branch=master) 
+
 # systemp
 
 A command line (CLI) utility program to display a Linux computers CPU 
