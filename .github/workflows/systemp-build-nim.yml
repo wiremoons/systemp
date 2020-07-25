@@ -32,20 +32,19 @@ jobs:
     - name: Install any dependencies and Nim language
       run: |
         echo "Installing Nim language and dependencies..."
-        sudo apt -y install build-essential openssl git curl
-        # installs Ubuntu package currently Version: 1.0.6-1
-        sudo apt -y install nim
-        # install specific version to obtain latest
-        #curl https://raw.githubusercontent.com/wiremoons/nim-misc/master/nim-install.sh -o nim-install.sh
-        #chmod 755 ./nim-install.sh
-        #./nim-install.sh
+        # Install specific binary version of Nim to obtain latest stable version
+        # Nim versions bunddled with Ubuntu 20.04 LTS : version 1.0.6-1
+        # are package versions which are not very up to date (current: 1.2.4)
+        # Use common install script on GitHib repo used across all Nim Action builds
+        curl https://raw.githubusercontent.com/wiremoons/nim-misc/master/nim-install.sh -o nim-install.sh
+        chmod 755 ./nim-install.sh
+        # run the install script...
+        ./nim-install.sh
         echo "Installed version of Nim and Nimble are:"
-        nim --version
-        nimble --version
-        #$HOME/.nimble/nim/bin/nim --version
-        #$HOME/.nimble/bin/nimble --version
+        $HOME/.nimble/nim/bin/nim --version
+        $HOME/.nimble/bin/nimble --version
 
-    # Install latest Nimble version
+    # Install latest Nimble version (NB: now included in install script above)
     #- name: Install dependencies and Nim language
     #  run: |
       #  echo "Update nimble to current version..."
@@ -58,14 +57,16 @@ jobs:
         
     # Runs a set of commands using the runners shell - include env secret key
     - name: Run a multi-line script
+      # Add any needed build GitHub repository specific Action secrects here
       #env:
           #DSAPI: ${{ secrets.DSAPI }}
       run: |
         echo "Building the project..."
         pwd
         ls
-        #PATH="${PATH}":$HOME/.nimble/nim/bin:$HOME/.nimble/bin
-        #$HOME/.nimble/bin/nimble release
+        PATH="${PATH}":$HOME/.nimble/nim/bin:$HOME/.nimble/bin
+        $HOME/.nimble/bin/nimble release
+        # build app using 'release' version
         nimble release
         cd bin/
         ./systemp -v
