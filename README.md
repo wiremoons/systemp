@@ -26,7 +26,7 @@ Ubuntu, and Raspbian. It also works with other non Raspberry Pi computer too.
 ## Using the Program
 
 When run, the command outputs the following information, the details of which 
-will vary depnding on the computers archticture. Below is the output from a 
+will vary depending on the computers architecture. Below is the output from a 
 Raspberry Pi 4B:
 ```
 'pi4server' Linux 4.19.97-v7l+ (ARM 4 cores) @ Wed 06 May 2020 20:46:14
@@ -111,7 +111,7 @@ information on installing Nim can be found here: [Nim Download](https://nim-lang
 the command: `git clone https://github.com/wiremoons/systemp.git`
 3. Then in the cloned code directory for `systemp` use Nimble to build a 
 release version with the command: `nimble release`. Other Nimble build commands 
-can be seen by runing: `nimble tasks`.
+can be seen by running: `nimble tasks`.
 4. The compiled binary of `systemp` can now be found in the `./bin` sub 
 directory. Just copy it somewhere in you path, and it should work when run.
 
