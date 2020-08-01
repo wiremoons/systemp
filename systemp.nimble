@@ -1,4 +1,4 @@
-# Package
+# Package Details
 
 version       = "1.0.3"
 author        = "Simon Rowe"
