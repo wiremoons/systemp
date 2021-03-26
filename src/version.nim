@@ -5,7 +5,7 @@
 ## Created by Simon Rowe <simon@wiremoons.com> on 26 Apr 2020
 ## Source code available from GitHub: https://github.com/wiremoons/systemp.git
 ## 
-## Small utliity to display a Linix computers CPU temperature called: 'systemp'
+## Small utility to display a Linux computers CPU temperature called: 'systemp'
 ##
 ## MIT License
 ## Copyright (c) 2020 Simon Rowe

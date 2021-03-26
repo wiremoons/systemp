@@ -16,7 +16,7 @@ import cpuinfo, strformat, os, strutils, times, nativesockets
 # import local app modules
 import dbgUtils, version, help
 
-debug "application runing..."
+debug "application running..."
 
 # check to make sure the app is being run on Linux
 debug "checking the program is running on Linux OS"
